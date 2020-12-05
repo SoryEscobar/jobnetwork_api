@@ -18,16 +18,16 @@ def home():
 @api.route('/job', methods=['GET', 'POST'])
 def job_requests():
     if request.method == 'GET':
-        #TODO:Change the request from
-        #id = 'JdmAREdm-welocalize-ltd-japanese-language-lead-for-marketing-contents-15'
-        #url = f'https://torre.co/api/opportunities/{id}'
-        #return csm().get(url)
-        return "TODO"
+        #TODO: Make request ID dynamic
+        id = 'JdmAREdm'
+        url = f'https://torre.co/api/opportunities/{id}'
+        return csm().get(url)
 
 
     if request.method == 'POST':
         #TODO: Do the request to the torre API here.
-        return "TODO"
+        url = 'https://search.torre.co/opportunities/_search/?'
+        return csm().get(url)
     
 
 
@@ -36,11 +36,13 @@ def job_requests():
 @api.route('/user', methods=['GET', 'POST'])
 def user_requests():
     if request.method == 'GET':
-        #TODO:Change the request from Sory Escobar to something else.
+        #TODO: Make request ID dynamic
         id = 'soryescobar'
         url = f'https://torre.bio/api/bios/{id}'
         return csm().get(url)
 
     if request.method == 'POST':
         #TODO: Do the request to the torre API here.
-        return "TODO"
+        url = 'https://search.torre.co/people/_search/?'
+        return csm().post(url)
+
