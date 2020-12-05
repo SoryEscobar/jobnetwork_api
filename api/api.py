@@ -25,9 +25,8 @@ def job_requests():
 
 
     if request.method == 'POST':
-        #TODO: Do the request to the torre API here.
         url = 'https://search.torre.co/opportunities/_search/?'
-        return csm().get(url)
+        return csm().post(url)
     
 
 
@@ -42,7 +41,6 @@ def user_requests():
         return csm().get(url)
 
     if request.method == 'POST':
-        #TODO: Do the request to the torre API here.
         url = 'https://search.torre.co/people/_search/?'
         return csm().post(url)
 
