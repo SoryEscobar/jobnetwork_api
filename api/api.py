@@ -1,7 +1,9 @@
 from flask import Flask
 from flask import request
 
-import consume_torre_api
+from .utils import consume_torre_api
+
+
 
 api = Flask(__name__)
 api.debug = True
