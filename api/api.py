@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request
 
 from .utils.consume_torre_api import Consumer as csm
+from .utils.user import User, response_to_users_converter
+from flask import jsonify
 
 
 
@@ -42,5 +44,6 @@ def user_requests():
 
     if request.method == 'POST':
         url = 'https://search.torre.co/people/_search/?'
-        return csm().post(url)
+        json_response = csm().post(url)
+        return response_to_users_converter(json_response)
 

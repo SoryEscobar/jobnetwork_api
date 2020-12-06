@@ -1,4 +1,5 @@
 import requests
+from flask import jsonify
 
 class Consumer():
    
@@ -23,6 +24,6 @@ class Consumer():
             if method == 'GET':
                 return self.response.json()
             if method == 'POST':
-                return self.response.text
+                return self.response.json()
             else:
                 return 'Invalid Method, for now...'
