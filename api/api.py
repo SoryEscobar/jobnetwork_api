@@ -17,33 +17,49 @@ def home():
 
 
 #JOBs
-@api.route('/job', methods=['GET', 'POST'])
-def job_requests():
+@api.route('/job/<jobid>', methods=['GET'])
+def job_requests_get(jobid = None):
+
     if request.method == 'GET':
-        #TODO: Make request ID dynamic
-        id = 'JdmAREdm'
-        url = f'https://torre.co/api/opportunities/{id}'
+        url = f'https://torre.co/api/opportunities/{jobid}'
         return csm().get(url)
 
+    else:
+        return "Not supported Request"
 
+
+@api.route('/job', methods=['POST'])
+def job_requests_post():
     if request.method == 'POST':
         url = 'https://search.torre.co/opportunities/_search/?'
         return csm().post(url)
+    
+    else:
+        return "Not supported Request"
     
 
 
 
 #Users
-@api.route('/user', methods=['GET', 'POST'])
-def user_requests():
+@api.route('/user/<username>', methods=['GET'])
+def user_requests_get(username = None):
+
     if request.method == 'GET':
-        #TODO: Make request ID dynamic
-        id = 'soryescobar'
-        url = f'https://torre.bio/api/bios/{id}'
+        url = f'https://torre.bio/api/bios/{username}'
         return csm().get(url)
+
+    else:
+        return "Not supported Request"
+
+
+@api.route('/user', methods=['POST'])
+def user_requests_post():
 
     if request.method == 'POST':
         url = 'https://search.torre.co/people/_search/?'
         json_response = csm().post(url)
-        return response_to_users_converter(json_response)
+        #return response_to_users_converter(json_response)
+        return json_response
 
+    else:
+        return "Not supported Request"

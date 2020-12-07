@@ -10,7 +10,4 @@ class User():
 def response_to_users_converter(response_data):
 
     users = response_data.get('results')
-
     return jsonify(users)
-
-
