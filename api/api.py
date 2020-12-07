@@ -1,14 +1,13 @@
 from flask import Flask
 from flask import request
 
-from .utils.consume_torre_api import Consumer as csm
-from .utils.user import User, response_to_users_converter
+from utils.consume_torre_api import Consumer as csm
+from utils.user import User, response_to_users_converter
 from flask import jsonify
 
 
 
 api = Flask(__name__)
-api.debug = True
 
 
 @api.route('/')
@@ -63,3 +62,7 @@ def user_requests_post():
 
     else:
         return "Not supported Request"
+
+
+if __name__ == '__main__':
+    api.run()
