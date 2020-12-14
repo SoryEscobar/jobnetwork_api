@@ -57,7 +57,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/Users/sory/programing_projects_2020/torretest_api/.venv'
+set -gx VIRTUAL_ENV '/Users/sory/coding_projects_2020/torretest_api/.venv'
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

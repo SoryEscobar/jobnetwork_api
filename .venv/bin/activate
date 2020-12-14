@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/Users/sory/programing_projects_2020/torretest_api/.venv'
+VIRTUAL_ENV='/Users/sory/coding_projects_2020/torretest_api/.venv'
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

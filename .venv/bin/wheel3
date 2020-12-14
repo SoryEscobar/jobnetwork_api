@@ -1,4 +1,4 @@
-#!/Users/sory/programing_projects_2020/torretest_api/.venv/bin/python
+#!/Users/sory/coding_projects_2020/torretest_api/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
